@@ -24,7 +24,7 @@ public class Player{
     name = n;
     playerNumber = player;
     
-    //
+    //just the pits for the pieces
     if (player == 1){
       startingPit = 0;
       endingPit = 5;
@@ -63,5 +63,26 @@ public class Player{
     return playerNumber;
   }
 
+/* 
+  class Factorial {
+
+    static int factorial( int n ) {
+        if (n != 0)  // termination condition
+            return n * factorial(n-1); // recursive call
+        else
+            return 1;
+    }
+
+    public static void main(String[] args) {
+        int number = 4, result;
+        result = factorial(number);
+        System.out.println(number + " factorial = " + result);
+    }
 }
+*/
+
+
+}
+
+
 

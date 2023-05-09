@@ -14,7 +14,6 @@ public class Main {
     Player[] players = new Player[2];
 
     int current;
-    current = 1;
 
     //player move scanner
     Scanner playerChoice = new Scanner(System.in);
@@ -23,18 +22,18 @@ public class Main {
     //printing entire board
     board.printBoard();
 
-    System.out.print("Welcome to Mancala. What is the name of the first player?");
+    System.out.print("Welcome to Java Mancala!! What is the name of the first player?");
 
     // first player enters
     players[0] = new Player(playerChoice.nextLine(), 1);
 
-    System.out.print("Who is the second player?");
+    System.out.print("Wonderful, who is the second player?");
 
     // second player enters
     players[1] = new Player(playerChoice.nextLine(), 2);
 
     System.out.println(
-        "Welcome " + players[0].getName() + " and " + players[current].getName() + ". Please enjoy your game.");
+        "Welcome " + players[0].getName() + " and " + players[1].getName() + ". Please enjoy your game.");
 
     current = 0;
 
@@ -49,10 +48,14 @@ public class Main {
     do {
       System.out.println("It is now the time for " + players[current].getName() + " to make a move.");
       playerIndex = board.playerMove(players[playerIndex]);
+      System.out.println(playerIndex);
       if (playerIndex == 0){
         loop = false;
       }
-      else{
+      else if (playerIndex == -1){
+        playerIndex = 0;
+      }
+      else {
         playerIndex--;
       }
       current = playerIndex;

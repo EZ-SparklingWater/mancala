@@ -159,7 +159,7 @@ public class Board extends Player{
     int index = -1;
     boolean loop = true;
     //temporarily not needed - boolean again = false;
-    char letter = 'E';
+    char letter = 'Z';
     printBoard();
 
 
@@ -167,7 +167,7 @@ public class Board extends Player{
 
     //I could not explain this to you if I tried, copied a template and replaced with my variables, maybe that's why I'm having an issue with my scanner input
     do {
-      System.out.print("Hello " + player.getName() + ", choose a pit between "+ pits[player.getEndingPit()] + ": ");
+      System.out.print("Hello " + player.getName() + ", choose a pit between " + pits[player.getStartingPit()] + " and " + pits[player.getEndingPit()] + ": ");
       loop = true;
       try{
         letter = tryCatch.nextLine().toUpperCase().charAt(0);
@@ -175,7 +175,7 @@ public class Board extends Player{
       catch (StringIndexOutOfBoundsException e){
         System.out.println("Please enter a letter.");
         //apparently I need this letter in order for there to be an error when it's incorrect, char letter is defined above
-        letter = 'E';
+        letter = 'Z';
       }
 
       index = findIndex(letter);
@@ -234,6 +234,8 @@ public class Board extends Player{
   }
   return retVal;
   }
+
+
 /*
 Irrelevant for the time being
 
@@ -243,10 +245,10 @@ Irrelevant for the time being
     int retVal = 0;
     char chose;
     
-    System.out.print(p.getName() + " choose from pits " + labels[p.getStart()] + " and " + labels[p.getEnd()] + ": ");
+    System.out.print(p.getName() + " choose from pits " + pits[p.getStartingPit()] + " and " + pits[p.getEndingPit()] + ": ");
 
     //credits to stack overflow post by Janet - making it so any letter format is valid
-    chose = input.next().toUpperCase().charAt(0);
+    chose = tryCatch.next().toUpperCase().charAt(0);
 
     retVal = random.nextInt(3);
     System.out.println("The random number being returned is: " + retVal);
