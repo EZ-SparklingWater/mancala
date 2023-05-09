@@ -10,30 +10,36 @@ public class Main {
 
     Board board = new Board();
 
+    //mini player array
     Player[] players = new Player[2];
 
     int current;
     current = 1;
 
-    Scanner input = new Scanner(System.in);
+    //player move scanner
+    Scanner playerChoice = new Scanner(System.in);
 
+    
+    //printing entire board
     board.printBoard();
 
     System.out.print("Welcome to Mancala. What is the name of the first player?");
 
     // first player enters
-    players[0] = new Player(input.nextLine(), 1);
+    players[0] = new Player(playerChoice.nextLine(), 1);
 
     System.out.print("Who is the second player?");
 
     // second player enters
-    players[1] = new Player(input.nextLine(), 2);
+    players[1] = new Player(playerChoice.nextLine(), 2);
 
     System.out.println(
         "Welcome " + players[0].getName() + " and " + players[current].getName() + ". Please enjoy your game.");
 
     current = 0;
 
+
+    //making sure the loop is returned corectly
     boolean loop = true;
 
     int playerIndex = 0;

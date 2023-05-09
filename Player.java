@@ -8,8 +8,8 @@ public class Player{
   //player name string
   private String name;
   private int player;
-  private int startPit;
-  private int endPit;
+  private int startingPit;
+  private int endingPit;
   private int mancalaPit;
   private int playerNumber;
 
@@ -19,19 +19,20 @@ public class Player{
     playerNumber = 0;
   }
 
-  //player constructor
+  //player constructor - the pits are for identifying player starting points
   public Player(String n, int p){
     name = n;
     playerNumber = player;
     
+    //
     if (player == 1){
-      startPit = 0;
-      endPit = 5;
+      startingPit = 0;
+      endingPit = 5;
       mancalaPit = 6;
     }
     else {
-      startPit = 7;
-      endPit = 12;
+      startingPit = 7;
+      endingPit = 12;
       mancalaPit = 13;
     }
   }
@@ -46,12 +47,12 @@ public class Player{
     return name;
   }
 
-  public int getStartPit(){
-    return startPit;
+  public int getStartingPit(){
+    return startingPit;
   }
 
-  public int getEndPit(){
-    return endPit;
+  public int getEndingPit(){
+    return endingPit;
   }
 
   public int getMancalaPit(){
