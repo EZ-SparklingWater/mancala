@@ -257,4 +257,21 @@ Irrelevant for the time being
   
 */
 
+//recursion score counter
+  private int score;
+
+  public int points(int count){
+    if (count == 1){
+      return 10;
+    }
+    else {
+      return 10 + points(count - 1);
+    }
+  }
+  public int getScore(){
+    return score;
+  }
+
+
+
 }

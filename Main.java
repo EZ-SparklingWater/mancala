@@ -63,4 +63,11 @@ public class Main {
     while (loop);
 
   }
+/*
+  Calling the score except it keeps giving errors.
+
+
+  System.out.println(player[1].getScore());
+*/
+
 }

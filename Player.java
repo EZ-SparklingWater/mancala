@@ -3,10 +3,13 @@ Everything in this class is essentially what we learned at the very beginning, w
 Constructors, mutators, & accessors.
 */
 
-public class Player{
+public class Player extends Attributes{
 
   //player name string
+
+  
   private String name;
+  
   private int player;
   private int startingPit;
   private int endingPit;
