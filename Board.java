@@ -29,6 +29,8 @@ seeds wins.
 This class uses a lot of things from the middle of the year, lots of arrays, booleans, for loops, and etc.
 */
 
+import java.util.Scanner;
+
 public class Board extends Player{
 
   //using a 2d array as a board, this is only setting up the framework though
@@ -156,16 +158,19 @@ public class Board extends Player{
     int retVal = 0;
     int index = -1;
     boolean loop = true;
-    boolean again = false;
+    //temporarily not needed - boolean again = false;
     char letter = 'E';
     printBoard();
+
+
+    Scanner tryCatch = new Scanner(System.in);
 
     //I could not explain this to you if I tried, copied a template and replaced with my variables, maybe that's why I'm having an issue with my scanner input
     do {
       System.out.print("Hello " + player.getName() + ", choose a pit between "+ pits[player.getEndingPit()] + ": ");
       loop = true;
       try{
-        letter = playerChoice.nextLine().toUpperCase().charAt(0);
+        letter = tryCatch.nextLine().toUpperCase().charAt(0);
       }
       catch (StringIndexOutOfBoundsException e){
         System.out.println("Please enter a letter.");
